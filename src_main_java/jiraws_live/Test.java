@@ -1,28 +1,33 @@
 package jiraws_live;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Test {
 	
-	public void test(String a) {
-		System.out.println("");
-	}
-	
-	public void test(Integer a, Integer b) {
-		System.out.println("");
-	}
-
 	public static void main(String[] args) {
 		
+		Barista newBarista = new Barista("JirAWS", "Youtube");
 		
-		Voiture maVoiture = new Voiture ("JirAWS", "Youtube");
+		Cafe newCafe = newBarista.faireUnCafe(0, 4);
+		Cafe secondCafe = newBarista.faireUnCafe();
 		
-		List<String> myList = new ArrayList<>();
+		afficherNombreSucre(newCafe);
+		afficherNombreSucre(secondCafe);
+
 		
-	//	test(null);
-	
+		newBarista.abuserSurLeSucre(newCafe);
+		newBarista.abuserSurLeSucre(secondCafe);
+
+		
+		afficherNombreSucre(newCafe);
+		afficherNombreSucre(secondCafe);
+		
+		newBarista.toString();
+		
+		
 	}
 	
+	public static void afficherNombreSucre(Cafe newCafe) {
+		System.out.println("Nombre de sucre actuel dans le cafe :" + newCafe.nombreSucre);
+
+	}
 
 }
